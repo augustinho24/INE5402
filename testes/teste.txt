@@ -1,0 +1,11 @@
+3
+2
+P1 aadecedabcdedcab
+P2 adacecadabcbeaaabdd
+5
+Joao P1 aacecedadcdedbab
+Maria P1 aadedacabcdedcab
+Pedro P2 adacebadabcbebaabdd
+Joana P2 adacecaadbcbeaaabdd
+Juca P1 aadecedabcdedabc
+
