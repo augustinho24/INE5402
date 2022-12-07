@@ -14,13 +14,10 @@ for u in range(NC):
 
     candidatos[nome] = prova, respostas 
 
-relacao_candidatos = {}
-
 for nome, (prova, respostas) in candidatos.items():
     erros_seguidos = 0
     acertos = 0
     if prova in provas:
-        relacao_candidatos[nome] = prova, respostas
         for i in range(len(provas[prova])):
             if provas[prova][i] == respostas[i]:
                 acertos += 1
@@ -28,13 +25,14 @@ for nome, (prova, respostas) in candidatos.items():
             else:
                 erros_seguidos += 1
                 if erros_seguidos == K:
-                    relacao_candidatos[nome] = "reprovado"
+                    candidatos[nome] = "reprovado"
                     break
         if erros_seguidos < K and acertos >= len(provas[prova]) * 0.75:
-            relacao_candidatos[nome] = "aprovado"
+            candidatos[nome] = "aprovado"
 
-for nome, indicacao in relacao_candidatos.items():
+for nome, indicacao in candidatos.items():
     print(nome, indicacao)
+    
 
     
 
