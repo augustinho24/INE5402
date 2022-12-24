@@ -1,0 +1,118 @@
+###1567 mod 29
+'''n = int(input())
+
+for i in range(n):
+    palavra_final = ''
+    palavras = input().split()
+    primeira_palavra = palavras[0]
+    segunda_palavra = palavras[1]
+
+    for i in range(len(primeira_palavra)):
+    # adiciona a primeira letra da primeira palavra
+        palavra_final += primeira_palavra[i]
+    # adiciona a primeira letra da segunda palavra
+        palavra_final += segunda_palavra[i]
+        if i == len(primeira_palavra) - 1:
+            break
+        if i == len(segunda_palavra) - 1:
+            break
+    # se a primeira palavra for maior que a segunda, adiciona o resto da primeira palavra
+    if len(primeira_palavra) > len(segunda_palavra):
+        palavra_final += primeira_palavra[i+1:]
+    # se a segunda palavra for maior que a primeira, adiciona o resto da segunda palavra
+    elif len(segunda_palavra) > len(primeira_palavra):
+        palavra_final += segunda_palavra[i+1:]
+    print(palavra_final)'''
+    
+### 2987 mod 32 - 9
+
+'''n = int(input())
+
+casas = []
+for i in range(n):
+    casas.append(int(input()))
+k = int(input())
+
+"""for i in range(len(casas)-1):
+    if casas[i+1] + casas[i] == k:
+        print(casas[i],casas[i+1])
+        break"""
+
+casa1, casa2 = zip(*[(casas[i], casas[i+1]) for i in range(len(casas)-1) if casas[i+1] + casas[i] == k])
+print(*casa1,*casa2)'''
+
+####
+
+##### 675443 mod 39 + 1
+
+num_apostados = [int(x) for x in input().split()]
+num_sorteados = [int(x) for x in input().split()]
+acertos = 0
+
+
+'''i = 0
+j = len(num_sorteados)-1
+while i < len(num_apostados) and j >= 0:
+    if num_apostados[i] == num_sorteados[j]:
+        acertos += 1
+        i += 1
+        j -= 1
+    elif num_apostados[i] < num_sorteados[j]:
+        i += 1
+    else:
+        j -= 1'''
+
+
+'''for i in range(len(num_sorteados)):
+    if num_sorteados[i] in num_apostados:
+        acertos += 1
+
+if acertos < 3:
+    print("azar")
+elif acertos == 3:
+    print("terno")
+elif acertos == 4:
+    print("quadra")
+elif acertos == 5:
+    print("quina")
+else:
+    print("sena")'''
+    
+####
+
+#### (45^39 mod 5^39)^0 + 3
+
+'''K = int(input())
+NP = int(input())
+
+provas = {}
+
+for i in range(NP):
+    cod_prova, gabarito = input().split()
+    provas[cod_prova] = gabarito
+
+candidatos = {}
+NC = int(input())
+for u in range(NC):
+    nome, prova, respostas = input().split()
+
+    candidatos[nome] = prova, respostas 
+
+for nome, (prova, respostas) in candidatos.items():
+    erros_seguidos = 0
+    acertos = 0
+    if prova in provas:
+        for i in range(len(provas[prova])):
+            if provas[prova][i] == respostas[i]:
+                acertos += 1
+                erros_seguidos = 0
+            else:
+                erros_seguidos += 1
+                if erros_seguidos == K:
+                    candidatos[nome] = "reprovado"
+                    break
+        if erros_seguidos < K and acertos >= len(provas[prova]) * 0.75:
+            candidatos[nome] = "aprovado"
+
+for nome, indicacao in candidatos.items():
+    print(nome, indicacao)'''
