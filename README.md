@@ -1,1 +1,2 @@
-Filho de um Jaburu e de um Cururu trilhando na Ciência da Computação.
+- Exercícios feitos no semestre de 2022.2 da disciplina Programação Orientada á Objetos I;
+- Prof.º: A. C. Mariani.
