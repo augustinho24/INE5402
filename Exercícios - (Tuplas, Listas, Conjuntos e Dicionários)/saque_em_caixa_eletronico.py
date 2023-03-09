@@ -9,7 +9,7 @@ valor_cedula = 0
 
 n = int(input())
 
-for _ in range n:
+for _ in range (n):
     valor_cedula = float(input('Valor da cédula: '))
     quantidade_cedulas = int(input('Quantidade de cédulas: '))
     cedulas[valor_cedula] = quantidade_cedulas
